@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Kodchasan:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kodchasan:wght@300;400;600&display=swap');
+
+.top-banner {
+    background-color: #BFC5C8;
+    text-align: center;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.navbar-brand {
+    font-size: 35px;
+    font-weight: reguler;
+   font-family: 'Playfair Display';
+}
+.navbar-nav .nav-link {
+    font-size: 16px;
+    font-weight: 500;
+}
+.search-box {
+    width: 300px;
+}
+.navbar{
+   background-color: #E2E9EC;
+}
+.footer1{
+    font-size: 40px;
+    font-family: 'Kodchasan', sans-serif;
+    text-align: center;
+padding-top: -50%;
+
+}
+
+
+

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin - Product Update</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .datetime {
+      font-size: 0.9rem;
+      color: #888;
+      margin-top: 5px;
+    }
+    nav h1 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .right-header {
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div>
+      <h1>
+        Welcome Back, <span class="admin-name">Admin</span>!
+        <span class="right-header">
+          <div class="datetime" id="datetime"></div>
+        </span>
+      </h1>
+    </div>
+    <div class="search-box">
+      <i class="fas fa-search"></i>
+      <input type="text" placeholder="Search Products..." />
+    </div>
+  </nav>
+
+  <div class="container">
+    <aside class="sidebar">
+      <h2>Welcome To <span>Admin</span></h2>
+      <ul>
+        <li><i>📋</i> Overview</li>
+        <li class="active"><i>📑</i> Products</li>
+        <li><i>👤</i> Customers</li>
+        <li><i>🛒</i> Orders</li>
+        <li><i>💳</i> Payments</li>
+        <li><i>⚙️</i> Settings</li>
+        <li><i>💬</i> Reviews</li>
+        <li><i>❓</i> Help & Support</li>
+      </ul>
+    </aside>
+
+    <main class="main">
+      <h2>Product Update</h2>
+      <form class="form-wrapper" method="POST" enctype="multipart/form-data" action="update_product.php">
+        <div class="form-left">
+          <div class="form-group"><label>Product Name</label><input type="text" name="product_name" placeholder="Product name" required/></div>
+          <div class="form-group"><label>Product No</label><input type="text" name="product_no" value="NI234" readonly /></div>
+          <div class="form-group"><label>Description</label><textarea name="description" placeholder="Product description" required></textarea></div>
+          <div class="form-group"><label>Category</label><input type="text" name="category" value="Frock" required/></div>
+          <div class="form-group"><label>Brand Name</label><input type="text" name="brand" value="Brand 1" required/></div>
+          <div class="form-inline">
+            <div class="form-group"><label>SKU</label><input type="text" name="sku" value="#32543" required/></div>
+            <div class="form-group"><label>Stock Quantity</label><input type="number" name="stock" value="124" required/></div>
+          </div>
+          <div class="form-inline">
+            <div class="form-group"><label>Regular Price</label><input type="text" name="regular_price" value="254" required/></div>
+            <div class="form-group"><label>Selling Price</label><input type="text" name="selling_price" value="533" required/></div>
+          </div>
+        </div>
+
+        <div class="form-right">
+          <div class="form-group">
+            <label>Product Gallery</label>
+            <input type="file" name="images[]" multiple accept=".png,.jpg,.jpeg" />
+          </div>
+          <div class="photos">
+            <div class="photo-box"><span>Photo.png</span><i class="fas fa-check-circle"></i></div>
+            <div class="photo-box"><span>Photo.png</span><i class="fas fa-check-circle"></i></div>
+            <div class="photo-box"><span>Photo.png</span><i class="fas fa-check-circle"></i></div>
+          </div>
+          <div class="buttons">
+            <button type="submit" name="update" class="update">UPDATE</button>
+            <button type="submit" name="delete" class="delete">DELETE</button>
+          </div>
+          <br />
+          <button type="reset" class="cancel">CANCEL</button>
+        </div>
+      </form>
+    </main>
+  </div>
+
+  <script>
+    function updateDateTime() {
+      const now = new Date();
+      const formatted = now.toLocaleString('en-US', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      });
+      document.getElementById('datetime').textContent = formatted;
+    }
+
+    updateDateTime();
+    setInterval(updateDateTime, 60000); // update every minute
+  </script>
+
+</body>
+</html>
