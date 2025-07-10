@@ -7,7 +7,7 @@ An e-commerce website for a fictional clothing brand, **Ninety6**, built using P
 
 ## 📸 Screenshots
 
-
+Link:https://github.com/chamaneth/znine/tree/main/UI%20Designs
 
 ---
 
